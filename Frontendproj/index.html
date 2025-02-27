@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Travel Planner - Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="itinerary.html">Itinerary Planner</a></li>
+                <li><a href="booking.html">Booking</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Smart Travel Planner</h1>
+        <p>Your personalized travel planning companion.</p>
+        <a href="destinations.html" class="btn">Explore Destinations</a>
+    </section>
+
+    <section class="about">
+        <div class="image-slider">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <img id="about-img" src="css/about.jpg" alt="About Us">
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
+        </div>
+        <div class="abouttext">
+            <h2>About Us</h2>
+            <p>At Smart Travel Planner, we specialize in crafting personalized travel experiences tailored to your interests and budget. Let us help you explore the world with ease and confidence.</p>
+        </div>
+    </section>
+    
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <h2>Why Choose Us</h2>
+        <div class="why-grid">
+            
+            <div class="reason">
+                <h3>Personalized Itineraries</h3>
+                <p>Our travel planners work with you to create the perfect itinerary based on your preferences, interests, and budget.</p>
+            </div>
+            <div class="reason">
+                <h3>Expert Recommendations</h3>
+                <p>Benefit from expert travel advice and tips to ensure you make the most of your trip.</p>
+            </div>
+            <div class="reason">
+                <h3>24/7 Support</h3>
+                <p>We offer round-the-clock support to ensure you have a smooth and worry-free travel experience.</p>
+            </div>
+            <div class="reason">
+                <h3>Seamless Booking</h3>
+                <p>Our platform allows you to book flights, accommodations, and activities all in one place, effortlessly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular-destinations">
+        <h2>Popular Destinations</h2>
+        <div class="destinations-grid">
+            <div class="destination">
+                <img src="paris.jpg" alt="Paris">
+                <h3>Paris</h3>
+                <p>The city of lights awaits with its rich history, art, and gastronomy.</p>
+            </div>
+            <div class="destination">
+                <img src="tokyo.jpg" alt="Tokyo">
+                <h3>Tokyo</h3>
+                <p>Experience the vibrant culture and advanced technology of Japan's capital.</p>
+            </div>
+            <div class="destination">
+                <img src="newyork.avif" alt="New York">
+                <h3>New York</h3>
+                <p>The city that never sleeps offers endless opportunities for adventure.</p>
+            </div>
+            <div class="destination">
+                <img src="india.avif" alt="India">
+                <h3>India</h3>
+                <p>Explore incredible India  rich culture, scenic beauty, vibrant festivals, and heritage!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-box">
+                <img src="p2.jpeg" alt="Alex & Jamie" class="testimonial-photo">
+                <p>"Smart Travel Planner made our honeymoon unforgettable. Every detail was perfect!"</p>
+                <cite>- Alex & Jamie</cite>
+            </div>
+            <div class="testimonial-box">
+                <img src="p3.jpeg" alt="Alex & Jamie" class="testimonial-photo">
+                <p>"Thanks to their expert planning, our family vacation was stress-free and fun-filled."</p>
+                <cite>- The Smith Family</cite>
+            </div>
+            <div class="testimonial-box">
+                <img src="p1.jpeg" alt="Alex & Jamie" class="testimonial-photo">
+                <p>"Their itinerary planner helped me explore Europe effortlessly. Highly recommended!"</p>
+                <cite>- Rachel Green</cite>
+            </div>
+            <div class="testimonial-box">
+                <img src="p4.jpeg" alt="Alex & Jamie" class="testimonial-photo">
+                <p>"Affordable yet luxurious trips! My trip to Bali was amazing!"</p>
+                <cite>- Kevin & Mia</cite>
+            </div>
+            <div class="testimonial-box">
+                <img src="p5.jpeg" alt="Alex & Jamie" class="testimonial-photo">
+                <p>"Seamless booking and travel arrangements. A truly wonderful experience!"</p>
+                <cite>- Daniel Parker</cite>
+            </div>
+            <div class="testimonial-box">
+                <img src="p6.jpeg" alt="Alex & Jamie" class="testimonial-photo">
+                <p>"Best trip to Thailand ever! Expert planning and smooth travel."</p>
+                <cite>- James & Sara</cite>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to our newsletter for the latest travel deals and tips.</p>
+        <form action="subscribe.html" method="post">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn">Subscribe</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Smart Travel Planner. All rights reserved.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

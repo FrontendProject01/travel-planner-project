@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Trip - Smart Travel Planner</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/scripts.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="itinerary.html">Itinerary Planner</a></li>
+                <li><a href="booking.html">Booking</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner-container">
+        <div class="banner-text">🎉 First Booking? Get <span style="color: yellow;">50% OFF</span> Now! 🎉</div>
+        <div class="banner-text">🎉 First Booking? Get <span style="color: yellow;">50% OFF</span> Now! 🎉</div>
+        <div class="banner-text">🎉 First Booking? Get <span style="color: yellow;">50% OFF</span> Now! 🎉</div>
+        <div class="banner-text">🎉 First Booking? Get <span style="color: yellow;">50% OFF</span> Now! 🎉</div>
+        <div class="banner-text">🎉 First Booking? Get <span style="color: yellow;">50% OFF</span> Now! 🎉</div>
+        <div class="banner-text">🎉 First Booking? Get <span style="color: yellow;">50% OFF</span> Now! 🎉</div>
+        <div class="banner-text">🎉 First Booking? Get <span style="color: yellow;">50% OFF</span> Now! 🎉</div>
+    </section>
+
+    <section class="booking-container">
+        <h1>Book Your Dream Trip</h1>
+        <p>Select your preferred package and fill in your details.</p>
+
+        <!-- Package Selection -->
+        <div class="packages">
+            <!-- Package 1: Economy -->
+            <div class="package" data-price="500">
+                <img src="economy.jpg" alt="Economy Package">
+                <h3>Economy Package</h3>
+                <p>Budget-friendly travel with comfortable stays.</p>
+                <ul>
+                    <li>3 Nights Stay</li>
+                    <li>Complimentary Breakfast</li>
+                    <li>Local Sightseeing</li>
+                </ul>
+                <p class="price">₹500 per person</p>
+                <button class="add-to-cart" data-name="Economy Package" data-price="500">Add to Cart</button>
+            </div>
+
+            <!-- Package 2: Premium -->
+            <div class="package" data-price="1200">
+                <img src="premium.jpg" alt="Premium Package">
+                <h3>Premium Package</h3>
+                <p>4-star hotels, guided tours, and more luxury.</p>
+                <ul>
+                    <li>5 Nights Stay</li>
+                    <li>Private City Tour</li>
+                    <li>Airport Pickup</li>
+                </ul>
+                <p class="price">₹1200 per person</p>
+                <button class="add-to-cart" data-name="Premium Package" data-price="1200">Add to Cart</button>
+            </div>
+
+            <!-- Package 3: Luxury -->
+            <div class="package" data-price="2500">
+                <img src="luxury.jpg" alt="Luxury Package">
+                <h3>Luxury Package</h3>
+                <p>5-star experience with premium facilities.</p>
+                <ul>
+                    <li>7 Nights Stay in 5-Star Hotel</li>
+                    <li>Private Yacht Tour</li>
+                    <li>All Meals Included</li>
+                </ul>
+                <p class="price">₹2500 per person</p>
+                <button class="add-to-cart" data-name="Luxury Package" data-price="2500">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Cart Section -->
+        <!-- Cart Section -->
+<h2>Your Cart</h2>
+<ul id="cart-items"></ul>
+<!-- Total Cost Section with Improved Styling -->
+<div class="total-cost-container">
+    <h3>Your Total Cost</h3>
+    <p class="total-cost-value" id="total-cost">₹0</p>
+</div>
+
+
+
+        <!-- Booking Form -->
+        <h2>Enter Your Details</h2>
+<form id="booking-form" style="max-width: 600px; margin: 0 auto;">
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <!-- Full Name and Email -->
+        <div style="display: flex; gap: 1rem;">
+            <div style="flex: 1;">
+                <label for="name" style="font-weight: bold;">Full Name:</label>
+                <input type="text" id="name" placeholder="Enter your full name" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <div style="flex: 1;">
+                <label for="email" style="font-weight: bold;">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+        </div>
+
+        <!-- Phone Number and Destination -->
+        <div style="display: flex; gap: 1rem;">
+            <div style="flex: 1;">
+                <label for="phone" style="font-weight: bold;">Phone Number:</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <div style="flex: 1;">
+                <label for="destination" style="font-weight: bold;">Choose Destination:</label>
+                <select id="destination" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+                    <option value="" disabled selected>Select a Country</option>
+                    <option value="India">India</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Maldives">Maldives</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="United States">United States</option>
+                    <option value="France">France</option>
+                    <option value="Japan">Japan</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Check-in, Check-out, and Guests -->
+        <div style="display: flex; gap: 1rem;">
+            <div style="flex: 1;">
+                <label for="date" style="font-weight: bold;">Select Travel Date:</label>
+                <input type="date" id="date" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <div style="flex: 1;">
+                <label for="guests" style="font-weight: bold;">Number of Guests:</label>
+                <input type="number" id="guests" min="1" placeholder="Enter number of guests" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+        </div>
+
+        <!-- Notes -->
+        <div>
+            <label for="notes" style="font-weight: bold;">Additional Notes (Optional):</label>
+            <textarea id="notes" rows="3" placeholder="Any special requests?" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+        </div>
+
+        <!-- Payment Method -->
+        <div>
+            <label for="payment" style="font-weight: bold;">Payment Method:</label>
+            <select id="payment" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+                <option value="credit">Credit Card</option>
+                <option value="debit">Debit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="upi">UPI</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <div style="text-align: center; margin-top: 1rem;">
+            <button type="submit" style="background: #008cba; color: white; border: none; padding: 0.8rem 1.5rem; font-size: 1rem; border-radius: 4px; cursor: pointer;">
+                Confirm Booking
+            </button>
+        </div>
+    </div>
+</form>
+
+
+    <footer>
+        <p>&copy; 2025 Smart Travel Planner. All rights reserved.</p>
+    </footer>
+</body>
+</html>
