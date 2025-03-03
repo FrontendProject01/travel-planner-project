@@ -6,6 +6,7 @@
     <title>Book Your Trip - Smart Travel Planner</title>
     <link rel="stylesheet" href="css/styles.css">
     <script defer src="js/scripts.js"></script>
+    <script defer src="js/booking.js"></script>
 </head>
 <body>
     <header>
@@ -13,8 +14,8 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="destinations.html">Destinations</a></li>
-                <li><a href="itinerary.html">Itinerary Planner</a></li>
                 <li><a href="booking.html">Booking</a></li>
+                <li><a href="contact.html">Contact us</a></li>
             </ul>
         </nav>
     </header>
@@ -46,7 +47,6 @@
                     <li>Local Sightseeing</li>
                 </ul>
                 <p class="price">₹500 per person</p>
-                <button class="add-to-cart" data-name="Economy Package" data-price="500">Add to Cart</button>
             </div>
 
             <!-- Package 2: Premium -->
@@ -60,7 +60,6 @@
                     <li>Airport Pickup</li>
                 </ul>
                 <p class="price">₹1200 per person</p>
-                <button class="add-to-cart" data-name="Premium Package" data-price="1200">Add to Cart</button>
             </div>
 
             <!-- Package 3: Luxury -->
@@ -74,96 +73,98 @@
                     <li>All Meals Included</li>
                 </ul>
                 <p class="price">₹2500 per person</p>
-                <button class="add-to-cart" data-name="Luxury Package" data-price="2500">Add to Cart</button>
             </div>
         </div>
-
-        <!-- Cart Section -->
-        <!-- Cart Section -->
-<h2>Your Cart</h2>
-<ul id="cart-items"></ul>
-<!-- Total Cost Section with Improved Styling -->
-<div class="total-cost-container">
-    <h3>Your Total Cost</h3>
-    <p class="total-cost-value" id="total-cost">₹0</p>
-</div>
 
 
 
         <!-- Booking Form -->
         <h2>Enter Your Details</h2>
-<form id="booking-form" style="max-width: 600px; margin: 0 auto;">
-    <div style="display: flex; flex-direction: column; gap: 1rem;">
-        <!-- Full Name and Email -->
-        <div style="display: flex; gap: 1rem;">
-            <div style="flex: 1;">
-                <label for="name" style="font-weight: bold;">Full Name:</label>
-                <input type="text" id="name" placeholder="Enter your full name" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
-            </div>
-            <div style="flex: 1;">
-                <label for="email" style="font-weight: bold;">Email:</label>
-                <input type="email" id="email" placeholder="Enter your email" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
-            </div>
-        </div>
+        <form id="booking-form">
+            <div class="form-container">
+                <!-- Full Name and Email -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+        
+                <!-- Phone Number and Destination -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Choose Destination:</label>
+                        <select id="destination" required>
+                            <option value="" disabled selected>Select a Country</option>
+                            <option value="India">India</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="Thailand">Thailand</option>
+                            <option value="United States">United States</option>
+                            <option value="France">France</option>
+                            <option value="Japan">Japan</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <!-- Travel Date and Guests -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Select Travel Date:</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests:</label>
+                        <input type="number" id="guests" min="1" placeholder="Enter number of guests" required>
+                    </div>
+                </div>
+        
+                <!-- Package Selection -->
+                <div class="form-row">
+                <div class="form-group">
+                    <label for="package">Select a Package:</label>
+                    <select id="package" required>
+                        <option value="" disabled selected>Select a Package</option>
+                        <option value="Economy Package">Economy Package</option>
+                        <option value="Premium Package">Premium Package</option>
+                        <option value="Luxury Package">Luxury Package</option>
+                    </select>
+                </div>
 
-        <!-- Phone Number and Destination -->
-        <div style="display: flex; gap: 1rem;">
-            <div style="flex: 1;">
-                <label for="phone" style="font-weight: bold;">Phone Number:</label>
-                <input type="tel" id="phone" placeholder="Enter your phone number" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+                
+        
+                <!-- Payment Method -->
+                <div class="form-group">
+                    <label for="payment">Payment Method:</label>
+                    <select id="payment" required>
+                        <option value="credit">Credit Card</option>
+                        <option value="debit">Debit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="upi">UPI</option>
+                    </select>
+                </div>
+                </div>
+        
+                <!-- Additional Notes -->
+                <div class="form-group">
+                    <label for="notes">Additional Notes (Optional):</label>
+                    <textarea id="notes" rows="3" placeholder="Any special requests?"></textarea>
+                </div>
+        
+                <!-- Submit Button -->
+                <div class="form-submit">
+                    <button type="submit">Confirm Booking</button>
+                </div>
             </div>
-            <div style="flex: 1;">
-                <label for="destination" style="font-weight: bold;">Choose Destination:</label>
-                <select id="destination" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
-                    <option value="" disabled selected>Select a Country</option>
-                    <option value="India">India</option>
-                    <option value="Italy">Italy</option>
-                    <option value="Maldives">Maldives</option>
-                    <option value="Thailand">Thailand</option>
-                    <option value="United States">United States</option>
-                    <option value="France">France</option>
-                    <option value="Japan">Japan</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Check-in, Check-out, and Guests -->
-        <div style="display: flex; gap: 1rem;">
-            <div style="flex: 1;">
-                <label for="date" style="font-weight: bold;">Select Travel Date:</label>
-                <input type="date" id="date" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
-            </div>
-            <div style="flex: 1;">
-                <label for="guests" style="font-weight: bold;">Number of Guests:</label>
-                <input type="number" id="guests" min="1" placeholder="Enter number of guests" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
-            </div>
-        </div>
-
-        <!-- Notes -->
-        <div>
-            <label for="notes" style="font-weight: bold;">Additional Notes (Optional):</label>
-            <textarea id="notes" rows="3" placeholder="Any special requests?" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;"></textarea>
-        </div>
-
-        <!-- Payment Method -->
-        <div>
-            <label for="payment" style="font-weight: bold;">Payment Method:</label>
-            <select id="payment" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
-                <option value="credit">Credit Card</option>
-                <option value="debit">Debit Card</option>
-                <option value="paypal">PayPal</option>
-                <option value="upi">UPI</option>
-            </select>
-        </div>
-
-        <!-- Submit Button -->
-        <div style="text-align: center; margin-top: 1rem;">
-            <button type="submit" style="background: #008cba; color: white; border: none; padding: 0.8rem 1.5rem; font-size: 1rem; border-radius: 4px; cursor: pointer;">
-                Confirm Booking
-            </button>
-        </div>
-    </div>
-</form>
+        </form>        
 
 
     <footer>

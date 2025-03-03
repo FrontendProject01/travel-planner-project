@@ -1,3 +1,5 @@
+
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -99,44 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setInterval(rotateTestimonials, 1500);
 
-    // Shopping Cart Functionality
-    const cart = [];
-    const cartButtons = document.querySelectorAll(".add-to-cart");
-    const totalCostElement = document.getElementById("total-cost");
-    const form = document.getElementById("booking-form");
-
-    cartButtons.forEach(button => {
-        button.addEventListener("click", (event) => {
-            const packageDiv = event.target.closest(".package");
-            if (packageDiv) {
-                const price = Number(packageDiv.dataset.price);
-                if (!isNaN(price)) {
-                    cart.push(price);
-                    updateTotalCost();
-                } else {
-                    console.error("Invalid price detected.");
-                }
-            }
-        });
-    });
-
-    function updateTotalCost() {
-        const totalCost = cart.reduce((sum, price) => sum + price, 0);
-        totalCostElement.textContent = `₹${totalCost}`;
-    }
-
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        if (cart.length === 0) {
-            alert("Please add at least one package to the cart!");
-            return;
-        }
-
-        alert("Booking confirmed! Thank you for choosing Smart Travel Planner.");
-        form.reset();
-        cart.length = 0;
-        updateTotalCost();
-    });
 
     updateDots();
 });
@@ -159,3 +123,31 @@ setInterval(changeBackground, 1500);
 // Initial call to set first image
 changeBackground();
 
+
+
+function searchDestinations() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let destinations = document.querySelectorAll('.destination');
+
+    destinations.forEach(dest => {
+        let title = dest.querySelector('h3').innerText.toLowerCase();
+        if (title.includes(input)) {
+            dest.style.display = "block";
+        } else {
+            dest.style.display = "none";
+        }
+    });
+}
+
+function filterDestinations() {
+    let filter = document.getElementById('filterSelect').value;
+    let destinations = document.querySelectorAll('.destination');
+
+    destinations.forEach(dest => {
+        if (filter === "all" || dest.classList.contains(filter)) {
+            dest.style.display = "block";
+        } else {
+            dest.style.display = "none";
+        }
+    });
+}

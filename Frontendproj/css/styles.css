@@ -53,11 +53,20 @@ nav ul li a {
 
 .hero h1 {
     font-size: 3em;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 40%;
+    margin-left: 28%;
 }
+
 
 .hero p {
     font-size: 2em;
-    margin: 10px 0 20px;
+    margin-left: -10%;
+    width: 1;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .hero .btn {
@@ -269,6 +278,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
+    width: 100%;
 }
 
 footer p {
@@ -461,58 +471,74 @@ button.prev:hover, button.next:hover {
     color: #28a745;
 }
 
-.add-to-cart {
-    background: #ff9800;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1em;
-    border-radius: 5px;
-}
-
-.add-to-cart:hover {
-    background: #e68900;
-}
-
-/* Form Styling */
-form {
-    background: white;
-    padding: 20px;
-    margin-top: 30px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    width: 30%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-}
-
-form label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-form input {
+/* General Form Styling */
+#booking-form {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
 }
 
-form button {
-    background: #0073e6;
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-left: 4%;
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+.form-submit {
+    text-align: center;
+}
+
+.form-submit button {
+    background: #008cba;
     color: white;
-    padding: 10px 15px;
     border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 1em;
-    border-radius: 5px;
-    margin-top: 10px;
+    transition: background 0.3s ease;
 }
 
-form button:hover {
-    background: #e32d2d;
+.form-submit button:hover {
+    background: #005f7a;
 }
+
 /* Moving Banner */
 .banner-container {
     width: 100%;
@@ -543,36 +569,147 @@ form button:hover {
         transform: translateX(-100%);
     }
 }
-/* Total Cost Section */
-.total-cost-container {
-    background-color: #4ebddf; /* Warm, light background for a soft, friendly look */
-    padding: 1.5rem;
+
+.contact-form {
+    width: 70%;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
     text-align: center;
-    border: 2px solid #000000; /* Accent border for a stylish touch */
 }
 
-.total-cost-container h3 {
-    font-size: 1.3rem;
-    color: #fefeff; /* Engaging orange color for the header */
-    margin-bottom: 15px;
+.contact-form h2 {
+    font-size: 2.5em;
+    color: #2c67d4;
+    margin-bottom: 10px;
+}
+
+.contact-form p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    text-align: left;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.total-cost-value {
-    font-size: 2.5rem;
-    color: #ffffff; /* Bold red for the total cost to create emphasis */
-    font-weight: 600;
+    color: #333;
     margin-top: 10px;
-    letter-spacing: 1px;
 }
 
-/* Optional: Adding a subtle hover effect */
-.total-cost-container:hover {
-    transform: scale(1.03);
+.contact-form input, .contact-form textarea {
+    width: 93%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form button {
+    background: #ff6f61;
+    background: #ff6f61;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.contact-form button:hover {
+    background: #e85649;
+    transform: scale(1.05);
     transition: all 0.3s ease;
+}
+
+/* Destinations Section */
+.destinations {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.destinations p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Search and Filter */
+.search-filter {
+    margin-bottom: 20px;
+}
+
+#searchInput, #filterSelect {
+    padding: 10px;
+    font-size: 1em;
+    width: 200px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.destinations-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Destination Card */
+.destination {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.destination img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.destination h3 {
+    margin: 15px 0 10px;
+}
+
+.destination p {
+    padding: 0 15px 15px;
+    font-size: 1em;
+    color: #666;
+}
+
+.destination:hover {
+    transform: scale(1.05);
+}
+
+.btn {
+    display: inline-block;
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #e85649;
 }
