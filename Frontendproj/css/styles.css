@@ -109,7 +109,7 @@ nav ul li a {
     font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 10px;
-    color: #ea6b0a; /* Travel-themed yellow */
+    color: #ea6b0a; /* About us*/
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -233,7 +233,7 @@ nav ul li a {
 
 .testimonial-container .testimonial-box.active {
     opacity: 1;
-    transform: scale(1.2);
+    transform: scale(1.2);             /*used to increase slightly large size of image*/
     transition: transform 0.5s ease-in-out;
 }
 
@@ -319,7 +319,7 @@ footer p {
 }
 
 .reason {
-    background-color: #ffffff;
+    background-color: #faf2f2;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);

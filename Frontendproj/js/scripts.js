@@ -1,4 +1,20 @@
+const bgimages = [
+    'css/welcome.jpg',
+    'css/hotel.jpg',
+    'css/hotel1.jpg'
+];
 
+let index = 0;
+function changeBackground() {     // for background image change
+    document.querySelector('.hero').style.backgroundImage = `url('${bgimages[index]}')`;
+    index = (index + 1) % bgimages.length; // Corrected variable
+}
+
+// Change background every 3 seconds
+setInterval(changeBackground, 1500);
+
+// Initial call to set first image
+changeBackground();
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -105,23 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateDots();
 });
 
-const bgimages = [
-    'css/welcome.jpg',
-    'css/hotel.jpg',
-    'css/hotel1.jpg'
-];
 
-let index = 0;
-function changeBackground() {
-    document.querySelector('.hero').style.backgroundImage = `url('${bgimages[index]}')`;
-    index = (index + 1) % bgimages.length; // Corrected variable
-}
-
-// Change background every 3 seconds
-setInterval(changeBackground, 1500);
-
-// Initial call to set first image
-changeBackground();
 
 
 
@@ -151,3 +151,19 @@ function filterDestinations() {
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const userConfirmed = confirm("Are you sure you want to submit the form?");
+        if (userConfirmed) {
+            alert("Form submitted successfully!");
+            contactForm.submit(); // Submit the form if the user confirms
+        } else {
+            alert("Form submission canceled.");
+        }
+    });
+});

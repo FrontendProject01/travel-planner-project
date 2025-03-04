@@ -39,5 +39,13 @@
         </form>
         
     </section>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+                alert("Thank you for contacting Trip-It. Feel free to reach out to us at any time.");
+                this.submit()
+            }
+        );
+    </script>
 </body>
 </html>
